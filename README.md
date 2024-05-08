@@ -68,6 +68,12 @@ This command creates a wallet account using only a private key. If you need a se
 ./twc-mac-arm64 help
 ```
 
+## Testnet
+To run in testnet add `--testnet` as the last flag in the command line. Example:
+```bash
+./twc-mac-arm64 balance --address=UQDYzZmfsrGzhObKJUw4gzdeIxEai3jAFbiGKGwxvxHinf4K --testnet
+```
+
 ## Contributing
 Contributions are welcome! If you have any suggestions, feature requests or find any issues, please open an issue or submit a pull request.
 

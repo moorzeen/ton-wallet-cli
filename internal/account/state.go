@@ -21,13 +21,13 @@ type State struct {
 	Transactions []*tlb.Transaction
 }
 
-func GetState(addr string) (*State, error) {
+func GetState(addr string, testnet bool) (*State, error) {
 	a, err := address.ParseAddr(addr)
 	if err != nil {
 		return nil, fmt.Errorf("parse address error: %w", err)
 	}
 
-	ctx, client, err := tonclient.New()
+	ctx, client, err := tonclient.New(testnet)
 	if err != nil {
 		return nil, fmt.Errorf("new client error: %w", err)
 	}

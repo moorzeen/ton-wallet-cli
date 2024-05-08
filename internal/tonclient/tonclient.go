@@ -8,14 +8,24 @@ import (
 	"github.com/xssnick/tonutils-go/ton"
 )
 
-func New() (context.Context, ton.APIClientWrapped, error) {
-	fmt.Print("Connecting to liteserver... ")
+var (
+	status = "Connecting to liteserver... "
+	url    = "https://ton.org/global.config.json"
+)
+
+func New(testnet bool) (context.Context, ton.APIClientWrapped, error) {
+	if testnet {
+		status = "Connecting to TESTNET liteserver... "
+		url = "https://ton.org/testnet-global.config.json"
+	}
+
+	fmt.Print(status)
 	defer fmt.Print("Ok\n")
 
 	ctx := context.Background()
 	client := liteclient.NewConnectionPool()
 
-	cfg, err := liteclient.GetConfigFromUrl(ctx, "https://ton.org/global.config.json")
+	cfg, err := liteclient.GetConfigFromUrl(ctx, url)
 	if err != nil {
 		return nil, nil, fmt.Errorf("get config err: %w", err)
 	}

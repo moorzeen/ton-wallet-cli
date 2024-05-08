@@ -27,6 +27,8 @@ var (
 func main() {
 	fs := flag.NewFlagSet("", flag.ExitOnError)
 
+	isTestnet := fs.Bool("testnet", false, "testnet mode")
+
 	if len(os.Args) < 2 {
 		fmt.Println(usage)
 		os.Exit(1)
@@ -79,7 +81,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		st, err := account.GetState(*address)
+		st, err := account.GetState(*address, *isTestnet)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
@@ -104,7 +106,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		err = account.Send(*to, *msg, *amount, *key)
+		err = account.Send(*to, *msg, *amount, *key, *isTestnet)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)

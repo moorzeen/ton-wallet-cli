@@ -87,8 +87,8 @@ func buildMessage(to, comment, amount string) (*wallet.Message, error) {
 	}, nil
 }
 
-func Send(to, msg, amount, key string) error {
-	ctx, client, err := tonclient.New()
+func Send(to, msg, amount, key string, testnet bool) error {
+	ctx, client, err := tonclient.New(testnet)
 	if err != nil {
 		return fmt.Errorf("new client error: %w", err)
 	}
