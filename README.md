@@ -13,11 +13,11 @@ If you like this application and want to support its development you can donate 
 
 ## How to install
 1. Download precompiled version:
-   * [Linux AMD64](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.0/twc-linux-amd64)
-   * [Linux ARM64](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.0/twc-linux-arm64)
-   * [Windows x64](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.0/twc-x64.exe)
-   * [Mac Intel](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.0/twc-mac-amd64)
-   * [Mac Apple Silicon](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.0/twc-mac-arm64)
+   * [Linux AMD64](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.1/twc-linux-amd64)
+   * [Linux ARM64](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.1/twc-linux-arm64)
+   * [Windows x64](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.1/twc-x64.exe)
+   * [Mac Intel](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.1/twc-mac-amd64)
+   * [Mac Apple Silicon](https://github.com/moorzeen/ton-wallet-cli/releases/download/v0.1.1/twc-mac-arm64)
 
 2. In case of Linux go to file directory and make it executable:
    ```bash
