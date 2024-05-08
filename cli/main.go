@@ -18,7 +18,8 @@ var (
 		"\tsend\tsend TON to another account\n" +
 		"\tversion\tshow build version and exit\n" +
 		"\thelp\tshow this text\n\n" +
-		"Use \"./twc <command> -h\" for more information about a command."
+		"Use \"./twc <command> -h\" for more information about a command.\n\n" +
+		"To run in testnet add \"--testnet\" as the last flag in the command line."
 
 	gitCommit string
 )
@@ -42,8 +43,8 @@ func main() {
 		acc.Print()
 
 	case "vanity":
-		suffix := fs.String("suffix", "", "Desired address suffix")
-		withSeed := fs.Bool("seed", false, "With seed phrase (slow)")
+		suffix := fs.String("suffix", "", "desired address suffix")
+		withSeed := fs.Bool("seed", false, "use seed phrase (slow)")
 
 		err := fs.Parse(os.Args[2:])
 		if err != nil {
@@ -65,7 +66,7 @@ func main() {
 		acc.Print()
 
 	case "balance":
-		address := fs.String("address", "", "Wallet address to check balance")
+		address := fs.String("address", "", "wallet address to check balance")
 
 		err := fs.Parse(os.Args[2:])
 		if err != nil {
@@ -87,10 +88,10 @@ func main() {
 		st.Print()
 
 	case "send":
-		to := fs.String("to", "", "Receiver address")
-		msg := fs.String("msg", "", "Message")
-		amount := fs.String("amount", "", "Amount of TON to send. Example: \"2,33\" or \"100\" or \"44.4\" or \"ALL\"")
-		key := fs.String("key", "", "Seed phrase or private key")
+		to := fs.String("to", "", "destination address")
+		msg := fs.String("msg", "", "message")
+		amount := fs.String("amount", "", "amount of TON to send, example: \"2,33\" or \"100\" or \"44.4\" or \"ALL\"")
+		key := fs.String("key", "", "seed phrase or private key")
 
 		err := fs.Parse(os.Args[2:])
 		if err != nil {
